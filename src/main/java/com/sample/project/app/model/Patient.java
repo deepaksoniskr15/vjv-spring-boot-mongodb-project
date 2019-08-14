@@ -19,6 +19,7 @@ import com.sample.project.app.config.CustomDateAndTimeDeserialize;
 import com.sample.project.app.config.CustomJsonDateSerializer;
 import com.sample.project.app.dto.DataDto;
 import com.sample.project.app.dto.PatientHistoryDto;
+import com.sample.project.app.dto.ReviewOfSystemsDto;
 
 @Document(collection = "patient_details")
 @JsonIgnoreProperties
@@ -46,7 +47,7 @@ public class Patient implements Serializable {
 	private String address;
 	private String officePhone;
 	private String fax;
-	private String birthDate;
+	private Date birthDate;
 	private String status;
 	private String gender;
 	private String maritalStatus;
@@ -67,10 +68,57 @@ public class Patient implements Serializable {
 	private PatientHistoryDto patientHistory;
 	private List<DataDto> physicalExam;
 
+	private ReviewOfSystemsDto reviewOfSystems;
+
 	private String hospitalName;
 	private String hospitalFax;
 	private String hospitalPhone;
 	private String hash;
+
+	private String ht;
+	private int wt;
+	private String rhythm;
+	private String bP;
+
+	public String getHt() {
+		return ht;
+	}
+
+	public void setHt(String ht) {
+		this.ht = ht;
+	}
+
+	public int getWt() {
+		return wt;
+	}
+
+	public void setWt(int wt) {
+		this.wt = wt;
+	}
+
+	public String getRhythm() {
+		return rhythm;
+	}
+
+	public void setRhythm(String rhythm) {
+		this.rhythm = rhythm;
+	}
+
+	public String getbP() {
+		return bP;
+	}
+
+	public void setbP(String bP) {
+		this.bP = bP;
+	}
+
+	public ReviewOfSystemsDto getReviewOfSystems() {
+		return reviewOfSystems;
+	}
+
+	public void setReviewOfSystems(ReviewOfSystemsDto reviewOfSystems) {
+		this.reviewOfSystems = reviewOfSystems;
+	}
 
 	public String getId() {
 		return id;
@@ -136,11 +184,11 @@ public class Patient implements Serializable {
 		this.fax = fax;
 	}
 
-	public String getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(String birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
